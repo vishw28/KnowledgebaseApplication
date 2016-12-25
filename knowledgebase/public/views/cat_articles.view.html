@@ -1,0 +1,18 @@
+<div ng-controller="ArticlesCategoryController as acc">
+    <h3 class="heading">{{acc.category}}Articles</h3>
+    <a href="#!/categories">Go Back</a>
+    <div class="row">
+        <div class="articles">
+            <div class="col-md-12" ng-repeat="article in acc.cat_articles">
+                <div class="article">
+                    <h3>{{article.title}}</h3>
+                    <p>{{article.body}}</p>
+                    <a class="btn btn-default" href="#!/articles/details/{{article._id}}">Read Article</a>
+                </div>
+                <div ng-if="!acc.cat_articles">
+                    No articles to display
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
